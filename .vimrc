@@ -37,8 +37,6 @@ NeoBundle 'mitsuhiko/vim-jinja.git'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'clausreinke/typescript-tools.git'
 
-call smartinput_endwise#define_default_rules()
-
 " for ghcmod.vim
 " NeoBundle 'Shougo/vimproc'
 " NeoBundle 'eagletmt/ghcmod-vim'
@@ -50,16 +48,20 @@ NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'lunaru/vim-twig'
 
+NeoBundle 'editorconfig/editorconfig-vim'
+
+call smartinput_endwise#define_default_rules()
+
 execute pathogen#infect()
 filetype plugin indent on
 "pathogen#runtime_append_all_bundles()
 
 "" My Settings start
 if has('gui_macvim')
-    set showtabline=2	" タブを常に表示
-    set antialias
-    set guifont=Ricty:h11
-    set guioptions-=T
+  set showtabline=2	" タブを常に表示
+  set antialias
+  set guifont=Ricty:h11
+  set guioptions-=T
 endif
 
 "新しい行のインデントを現在行と同じにする
