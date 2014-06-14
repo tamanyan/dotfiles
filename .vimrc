@@ -49,6 +49,7 @@ NeoBundle 'tpope/vim-sensible'
 NeoBundle 'lunaru/vim-twig'
 
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'toyamarinyon/vim-swift'
 
 call smartinput_endwise#define_default_rules()
 
@@ -113,10 +114,10 @@ set ruler
 set hlsearch
 
 " for US keyboard
-"noremap ; :
-"noremap : ;
-"inoremap ; :
-"inoremap : ;
+noremap ; :
+noremap : ;
+inoremap ; :
+inoremap : ;
 noremap s :%s/
 noremap <C-c> :nohl<CR>
 
@@ -128,6 +129,7 @@ au BufNewFile,BufRead *.h set ft=cpp
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType coffee setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType php setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType typescript setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 au BufNewFile,BufRead *.cu set ft=cpp
@@ -276,3 +278,7 @@ else
     noremap <Space>y "+y
     noremap <Space>p "+p
 endif
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
