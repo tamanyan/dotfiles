@@ -51,6 +51,17 @@ NeoBundle 'lunaru/vim-twig'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'toyamarinyon/vim-swift'
 
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-fugitive'
+"NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+" grep検索の実行後にQuickFix Listを表示する
+autocmd QuickFixCmdPost *grep* cwindow
+" ステータス行に現在のgitブランチを表示する
+set statusline+=%{fugitive#statusline()}"
+
 call smartinput_endwise#define_default_rules()
 
 execute pathogen#infect()
@@ -68,7 +79,7 @@ endif
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-set browsedir=buffer 
+set browsedir=buffer
 "変更中のファイルでも、保存しないで他のファイルを表示
 set hidden
 "インクリメンタルサーチを行う
@@ -139,7 +150,7 @@ au BufNewFile,BufRead *.ejs set ft=html
 au BufRead,BufNewFile *.scss set filetype=sass
 au BufRead,BufNewFile *.ts set filetype=typescript
 autocmd QuickFixCmdPost vimgrep cwindow
-"""""" My Settings start 
+"""""" My Settings start
 
 
 "Vi互換をオフ
