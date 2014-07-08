@@ -56,6 +56,14 @@ NeoBundle 'tpope/vim-fugitive'
 "NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'vim-scripts/mru.vim'
+NeoBundle 'vim-scripts/closetag.vim'
+
+NeoBundle 'tomasr/molokai'
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
@@ -289,7 +297,3 @@ else
     noremap <Space>y "+y
     noremap <Space>p "+p
 endif
-
-set expandtab
-set tabstop=2
-set shiftwidth=2
