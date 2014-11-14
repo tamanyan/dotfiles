@@ -60,6 +60,8 @@ NeoBundle 'vim-scripts/mru.vim'
 NeoBundle 'vim-scripts/closetag.vim'
 
 NeoBundle 'tomasr/molokai'
+NeoBundle 'lukaszkorecki/CoffeeTags'
+NeoBundle 'majutsushi/tagbar'
 
 let g:molokai_original = 1
 let g:rehash256 = 1
@@ -284,7 +286,7 @@ set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed
 
 " Vim(Mac)
 if has('mac') && !has('gui')
@@ -297,3 +299,6 @@ else
     noremap <Space>y "+y
     noremap <Space>p "+p
 endif
+let NERDTreeIgnore = ['\.pyc$','\.o$','\.a$']
+
+noremap <F8> :TagbarToggle<CR>
