@@ -62,6 +62,7 @@ NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'lukaszkorecki/CoffeeTags'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'tell-k/vim-autopep8'
 
 let g:molokai_original = 1
 let g:rehash256 = 1
@@ -287,6 +288,8 @@ highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 set clipboard+=unnamed
+
+let g:syntastic_python_checkers = ['pep8']
 
 " Vim(Mac)
 if has('mac') && !has('gui')

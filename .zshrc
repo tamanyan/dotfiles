@@ -56,6 +56,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # ../ の後は今いるディレクトリを補完しない
 zstyle ':completion:*' ignore-parents parent pwd ..
 
+zstyle ':completion:*' format '%B%d%b'
+
 # sudo の後ろでコマンド名を補完する
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
                    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
