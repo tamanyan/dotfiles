@@ -160,6 +160,7 @@ alias -g G='| grep'
 
 alias vi='vim'
 
+
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
@@ -193,6 +194,10 @@ for i in `find . -name "${1}"`
 do
   wc -l $i
 done
+}
+
+function zssh(){
+ssh "$@" -t /bin/zsh
 }
 
 function fgrep(){
