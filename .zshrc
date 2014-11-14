@@ -106,6 +106,14 @@ setopt auto_cd
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
+DIRSTACKSIZE=100
+# cd
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
+
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
@@ -242,3 +250,6 @@ nvm use v0.11.12
 export NODE_PATH=$NODE_PATH:/Users/tama/.nvm/v0.11.12/lib/node_modules
 
 export PYTHONIOENCODING=UTF-8
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
