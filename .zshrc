@@ -7,7 +7,6 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -19,6 +18,14 @@ bindkey -e
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+setopt list_packed
 
 # プロンプト
 # 1行表示
@@ -40,6 +47,7 @@ zstyle ':zle:*' word-style unspecified
 # 補完
 # 補完機能を有効にする
 autoload -Uz compinit
+fpath=(/usr/local/share/zsh-completions $fpath)
 compinit
 
 # 補完で小文字でも大文字にマッチさせる
@@ -54,6 +62,13 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+
+# オブジェクトファイルとか中間ファイルとかはfileとして補完させない
+zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
+
+
+# 括弧の対応の自動補完
+setopt auto_param_keys
 
 
 ########################################
@@ -96,7 +111,7 @@ setopt pushd_ignore_dups
 setopt magic_equal_subst
 
 # 同時に起動したzshの間でヒストリを共有する
-setopt share_history
+# setopt share_history
 
 # 同じコマンドをヒストリに残さない
 setopt hist_ignore_all_dups
@@ -128,7 +143,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias la='ls -a'
 alias ll='ls -l'
 
-alias rm='rm -i'
+# alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
@@ -180,6 +195,7 @@ function fgrep(){
 echo "find . -name ${1} | xargs grep ${2}"
 find . -name "${1}" | xargs grep ${2}
 }
+export LMNTAL_HOME="/Applications/LaViT2_8_6/lmntal"
 alias diff='colordiff -u'
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift'
@@ -188,20 +204,24 @@ export PATH=/usr/local/sbin:$PATH # for Homebrew
 export PATH=/usr/local/bin:$PATH  # for Homebrew
 
 # initialize for rbenv at bash
-if which rbenv > /dev/null;
-then eval "$(rbenv init -)";
-    #source ~/.rbenv/completions/rbenv.bash
-fi
+#if which rbenv > /dev/null;
+#then eval "$(rbenv init -)";
+#    source $HOME/.rbenv/completions/rbenv.zsh
+#fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
+#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+#PATH=$HOME/.php-nabe/php-nabe/bin:$PATH
+
 export NODE_PATH=/usr/local/lib/node_modules
-
-export PHP_HOME=$HOME/local/php/versions
-# source $(brew --prefix php-version)/php-version.sh && php-version 5.4.0 >/dev/null
-
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)" 
+#export PATH=$PATH:$HOME/.phpenv/bin
+#eval "$(phpenv init -)"
+#export PATH=$HOME/.rbenv/bin:$HOME/.phpenv/bin:$PATH
+#eval "$(rbenv init -)"
+#eval "$(phpenv init -)"
 
 export SCALA_HOME=~/.svm/current/rt
 export PATH=$SCALA_HOME/bin:$PATH
