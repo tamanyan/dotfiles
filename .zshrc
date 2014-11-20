@@ -31,8 +31,9 @@ setopt list_packed
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
-%# "
+# PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
+# %# "
+PROMPT="%{${fg[red]}%}%~%{${reset_color}%} → "
 
 
 # 単語の区切り文字を指定する
@@ -220,34 +221,22 @@ alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDe
 export PATH=/usr/local/sbin:$PATH # for Homebrew
 export PATH=/usr/local/bin:$PATH  # for Homebrew
 
-# initialize for rbenv at bash
-#if which rbenv > /dev/null;
-#then eval "$(rbenv init -)";
-#    source $HOME/.rbenv/completions/rbenv.zsh
-#fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
-#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-#PATH=$HOME/.php-nabe/php-nabe/bin:$PATH
-
 export NODE_PATH=/usr/local/lib/node_modules
-#export PATH=$PATH:$HOME/.phpenv/bin
-#eval "$(phpenv init -)"
-#export PATH=$HOME/.rbenv/bin:$HOME/.phpenv/bin:$PATH
-#eval "$(rbenv init -)"
-#eval "$(phpenv init -)"
 
 export SCALA_HOME=~/.svm/current/rt
 export PATH=$SCALA_HOME/bin:$PATH
 export PATH=$HOME/.svm/current/rt/bin:$PATH
 
 source $HOME/.nvm/nvm.sh
-nvm use v0.11.12
+NODE_VERSION=v0.10.25
+nvm use $NODE_VERSION
 
-export NODE_PATH=$NODE_PATH:/Users/tama/.nvm/v0.11.12/lib/node_modules
+export NODE_PATH=$NODE_PATH:/Users/tama/.nvm/$NODE_VERSION/lib/node_modules
 
 export PYTHONIOENCODING=UTF-8
 
