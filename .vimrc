@@ -60,9 +60,11 @@ NeoBundle 'vim-scripts/mru.vim'
 NeoBundle 'vim-scripts/closetag.vim'
 
 NeoBundle 'tomasr/molokai'
-NeoBundle 'lukaszkorecki/CoffeeTags'
+"NeoBundle 'lukaszkorecki/CoffeeTags'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tell-k/vim-autopep8'
+
+NeoBundle 'yegappan/mru'
 
 let g:molokai_original = 1
 let g:rehash256 = 1
