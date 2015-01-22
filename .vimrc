@@ -138,10 +138,10 @@ set ruler
 set hlsearch
 
 " for US keyboard
-noremap ; :
-noremap : ;
-inoremap ; :
-inoremap : ;
+" noremap ; :
+" noremap : ;
+" inoremap ; :
+" inoremap : ;
 noremap s :%s/
 noremap <C-c> :nohl<CR>
 
@@ -291,8 +291,6 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 set clipboard+=unnamed
 
-let g:syntastic_python_checkers = ['pep8']
-
 " Vim(Mac)
 if has('mac') && !has('gui')
     nnoremap <silent> <Space>y :.w !pbcopy<CR><CR>
@@ -306,4 +304,9 @@ else
 endif
 let NERDTreeIgnore = ['\.pyc$','\.o$','\.a$']
 
+" AutoPep
 noremap <F8> :TagbarToggle<CR>
+let g:autopep8_max_line_length=99
+
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args="--max-line-length=99"
