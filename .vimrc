@@ -21,7 +21,7 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
+" NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'git://github.com/jsx/jsx.vim.git'
 NeoBundle 'git://github.com/kana/vim-fakeclip.git'
 NeoBundle 'kana/vim-smartinput'
@@ -65,6 +65,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tell-k/vim-autopep8'
 
 NeoBundle 'yegappan/mru'
+NeoBundle 'kien/ctrlp.vim'
 
 let g:molokai_original = 1
 let g:rehash256 = 1
@@ -143,7 +144,7 @@ set hlsearch
 " inoremap ; :
 " inoremap : ;
 noremap s :%s/
-noremap <C-c> :nohl<CR>
+noremap <C-c> :noh<CR>
 
 " タブの視覚化
 highlight TagKey guibg=#b5d68f
@@ -310,3 +311,8 @@ let g:autopep8_max_line_length=99
 
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args="--max-line-length=99"
+
+" ctrlp
+" let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
+let g:ctrlp_working_path_mode = 'ra'
