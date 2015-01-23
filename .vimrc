@@ -30,8 +30,8 @@ NeoBundle 'cohama/vim-smartinput-endwise'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle "Shougo/vimfiler.git"
 NeoBundle "Shougo/unite.vim.git"
-NeoBundle "Shougo/vimproc.git"
-NeoBundle "Shougo/neosnippet-snippets.git"
+NeoBundle 'Shougo/vimproc.git'
+NeoBundle 'Shougo/neosnippet-snippets.git'
 NeoBundle 'mitsuhiko/vim-jinja.git'
 
 NeoBundle 'leafgarland/typescript-vim'
@@ -66,6 +66,9 @@ NeoBundle 'tell-k/vim-autopep8'
 
 NeoBundle 'yegappan/mru'
 NeoBundle 'kien/ctrlp.vim'
+
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'junegunn/vim-easy-align'
 
 let g:molokai_original = 1
 let g:rehash256 = 1
@@ -143,7 +146,7 @@ set hlsearch
 " noremap : ;
 " inoremap ; :
 " inoremap : ;
-noremap s :%s/
+" noremap s :%s/
 noremap <C-c> :noh<CR>
 
 " タブの視覚化
@@ -316,3 +319,25 @@ let g:syntastic_python_flake8_args="--max-line-length=99"
 " let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
 let g:ctrlp_working_path_mode = 'ra'
+
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)"
+
+" surround vim
+function! s:define_surround_mapping(key, mapping)
+    let var_name = 'surround_'.char2nr(a:key)
+      execute 'let b:' . var_name . ' = "' . a:mapping . '"'
+    endfunction
+    let dict = {
+            \ '(' : "(\r)",
+            \ '[' : "[\r]",
+            \ '<' : "<\r>",
+            \ '{' : "{ \r }",
+            \ '#':  "#{\r}",
+            \ }
+    for [key, mapping] in items(dict)
+        call s:define_surround_mapping(key, mapping)
+    endfor
