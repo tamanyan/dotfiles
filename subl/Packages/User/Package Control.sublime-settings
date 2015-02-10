@@ -1,0 +1,25 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"All Autocomplete",
+		"AutoPEP8",
+		"Block Cursor Everywhere",
+		"DocBlockr",
+		"Dotfiles Syntax Highlighting",
+		"Japanize",
+		"Keymaps",
+		"Package Control",
+		"Python Auto-Complete",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"SublimeREPL",
+		"Surround",
+		"Vintage Numbers",
+		"Vintage Surround",
+		"Vintageous"
+	]
+}
