@@ -21,6 +21,7 @@
 		"Python Auto-Complete",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
+		"SublimeLinter-phplint",
 		"SublimeREPL",
 		"Surround",
 		"Theme - Coffee",
