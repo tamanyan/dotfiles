@@ -6,20 +6,27 @@
 	[
 		"Alignment",
 		"All Autocomplete",
+		"AngularJS (CoffeeScript)",
 		"AutoPEP8",
+		"Better CoffeeScript",
 		"Block Cursor Everywhere",
 		"DocBlockr",
 		"Dotfiles Syntax Highlighting",
+		"EditorConfig",
 		"Japanize",
+		"Jedi - Python autocompletion",
 		"Keymaps",
 		"Package Control",
+		"PHP Completions Kit",
 		"Python Auto-Complete",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
 		"SublimeREPL",
 		"Surround",
+		"Theme - Coffee",
 		"Vintage Numbers",
 		"Vintage Surround",
-		"Vintageous"
+		"Vintageous",
+		"Vintageous - Region To Selection"
 	]
 }
